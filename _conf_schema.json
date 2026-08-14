@@ -1,8 +1,74 @@
 {
+    "whitelist": {
+        "description": "允许使用该插件的白名单用户列表。若留空则所有人皆可使用。",
+        "type": "list",
+        "hint": "白名单 (空则不限)",
+        "default": []
+    },
+    "permission_denied_msg": {
+        "description": "非白名单用户使用插件时的回复提示词。若留空则直接静默，不作任何回复。",
+        "type": "string",
+        "hint": "权限拒绝提示 (留空则静默)",
+        "default": "⚠️ 权限拒绝：您不在允许使用传话功能的白名单中。"
+    },
+    "aliases": {
+        "description": "目标身份别名，例如输入 'qq:3953526825=Satan'，传话时可直接用 'Satan' 代替 QQ 号。",
+        "type": "list",
+        "hint": "用户/群组身份别名",
+        "default": []
+    },
     "random_offset_seconds": {
-        "description": "设置定时发送的随机前后浮动时间 (秒)。例如设为 300，则会在设定的目标时间前后 5 分钟内随机触发。设为 0 则严格精确到秒。",
+        "description": "设置定时发送的随机前后浮动时间 (秒)。",
         "type": "int",
         "hint": "定时随机波动范围 (秒)",
         "default": 300
+    },
+    "enable_smart_split": {
+        "description": "是否开启传话内容的智能分段功能。",
+        "type": "bool",
+        "hint": "开启智能分段",
+        "default": true
+    },
+    "max_text_length": {
+        "description": "转发字数超过该值时不进行分段；设为 0 表示不限制。",
+        "type": "int",
+        "hint": "分段字数上限",
+        "default": 150
+    },
+    "max_split_count": {
+        "description": "此处设定每句消息最多可以分成多少段话来发送。",
+        "type": "int",
+        "hint": "最大分段数",
+        "default": 5
+    },
+    "split_triggers": {
+        "description": "触发分段的字符列表（支持添加 \\n）。",
+        "type": "list",
+        "hint": "触发分段的字符",
+        "default": [",", "，", "。", "！", "？", "；", "\n", ".", "!", "?", ";"]
+    },
+    "per_char_delay": {
+        "description": "每段话之间需要停顿一定时间，用来模拟打字。设定每个汉字耗时多少秒（英文字母视为半个汉字）。",
+        "type": "float",
+        "hint": "打字速度",
+        "default": 0.4
+    },
+    "delay_range": {
+        "description": "设定每段话之间停顿的时间范围，用来防止短句停顿太短，长句停顿太长。单位为秒，用 ~ 分隔。",
+        "type": "string",
+        "hint": "停顿时间范围",
+        "default": "1~16"
+    },
+    "show_typing": {
+        "description": "开启后，打字时会显示'正在输入中...'的状态。",
+        "type": "bool",
+        "hint": "显示正在输入中",
+        "default": true
+    },
+    "remove_trailing_punctuation": {
+        "description": "分段后要清理每句话的句尾标点。",
+        "type": "list",
+        "hint": "要清理的句尾标点",
+        "default": ["。", ".", "！", "!", "？", "?", "；", ";", "，", ","]
     }
 }
