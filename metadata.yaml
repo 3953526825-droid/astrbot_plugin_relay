@@ -1,6 +1,6 @@
 name: astrbot_plugin_relay
-desc: 基于 AstrBot 的人设化定时传话插件
-help: 支持人设重构、定时调度（带随机波动）以及私聊/群聊传话
-version: v1.0.0
+desc: 基于 AstrBot 的人设定制传话插件（支持批量、定时、动态渲染）
+help: 支持人设重构、定时调度（带随机波动）、批量发送、动态时间渲染以及私聊/群聊传话
+version: v4.0.0
 author: 3953526825-droid
-repo: https://github.com/3953526825-droid/astrbot_plugin_relay
+repo: https://github.53526825-droid/astrbot_plugin_relay
